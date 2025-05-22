@@ -55,7 +55,7 @@ This repository provides everything you need to self-host MCP UVX servers inside
 3. **Build the Docker image**:
 
    ```bash
-   docker build -t the-ai-workshops/n8n-uvx .
+   docker build -t n8n-uvx .
    ```
 4. **Launch with Docker Compose**:
 
