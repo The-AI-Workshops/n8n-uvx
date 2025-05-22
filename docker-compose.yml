@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  n8n:
+    build: .
+    ports:
+      - "${N8N_PORT}:5678"
+    environment:
+      # N8N core
+      N8N_BASIC_AUTH_ACTIVE:           "${N8N_BASIC_AUTH_ACTIVE}"
+      N8N_BASIC_AUTH_USER:             "${N8N_BASIC_AUTH_USER}"
+      N8N_BASIC_AUTH_PASSWORD:         "${N8N_BASIC_AUTH_PASSWORD}"
+      N8N_COMMUNITY_PACKAGES_ALLOW_TOOL_USAGE: "${N8N_COMMUNITY_PACKAGES_ALLOW_TOOL_USAGE}"
+      
+    volumes:
+      - "${N8N_DATA_DIR}:/home/node/.n8n"
+      - "${MCP_DATA_DIR}:/data/mcp"
